@@ -12,16 +12,19 @@ public class TargetLocator : MonoBehaviour
     {
         FindClosestEnemy();
 
+        if (_target == null)
+        {
+            Attack(false);
+            return;
+        }
+            
+
         float targetDistance = Vector3.Distance(transform.position, _target.position);
 
         if (targetDistance <= _range)
         {
             AimWeapon();
             Attack(true);
-        }
-        else
-        {
-            Attack(false);
         }
     }
 
