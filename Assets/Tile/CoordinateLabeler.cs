@@ -8,7 +8,7 @@ public class CoordinateLabeler : MonoBehaviour
     [SerializeField] private Color _defaultColor = Color.white;
     [SerializeField] private Color _blockedColor = Color.gray;
     [SerializeField] private Color _exploredColor = Color.yellow;
-    [SerializeField] private Color _pathColor = new Color(1f, 0.5f, 0f);
+    [SerializeField] private Color _pathColor = new Color(1f, 0f, 0f);
 
     private TextMeshPro _label;
     private Vector2Int _coordinates;

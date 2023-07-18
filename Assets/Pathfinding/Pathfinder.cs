@@ -4,7 +4,10 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] private Vector2Int _startCoordinates;
+    public Vector2Int StartCoordinates => _startCoordinates;
+
     [SerializeField] private Vector2Int _destinationCoordinates;
+    public Vector2Int DestinationCoordinates => _destinationCoordinates;
 
     private Node _startNode;
     private Node _destinationNode;
@@ -22,14 +25,15 @@ public class Pathfinder : MonoBehaviour
         _gridManager = FindObjectOfType<GridManager>();
 
         if (_gridManager != null)
+        {
             _grid = _gridManager.Grid;
+            _startNode = _grid[_startCoordinates];
+            _destinationNode = _grid[_destinationCoordinates];
+        }
     }
 
     void Start()
     {
-        _startNode = _gridManager.Grid[_startCoordinates];
-        _destinationNode = _gridManager.Grid[_destinationCoordinates];
-
         GetNewPath();
     }
 
@@ -68,6 +72,9 @@ public class Pathfinder : MonoBehaviour
 
     private void BreadthFirstSearch()
     {
+        _startNode.isWalkable = true;
+        _destinationNode.isWalkable = true;
+
         _frontiers.Clear();
         _reached.Clear();
 
@@ -126,5 +133,10 @@ public class Pathfinder : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void NotifyRecievers()
+    {
+        BroadcastMessage("RecalculatePath", SendMessageOptions.DontRequireReceiver);
     }
 }
