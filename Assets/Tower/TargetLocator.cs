@@ -1,31 +1,18 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class TargetLocator : MonoBehaviour
 {
     [SerializeField] private Transform _weapon;
     [SerializeField] private ParticleSystem _projectileParticles;
-    [SerializeField] private float _range = 15f;
+    [SerializeField] private float _range = 25f;
 
     private Transform _target;
 
     private void Update()
     {
         FindClosestEnemy();
-
-        if (_target == null)
-        {
-            Attack(false);
-            return;
-        }
-            
-
-        float targetDistance = Vector3.Distance(transform.position, _target.position);
-
-        if (targetDistance <= _range)
-        {
-            AimWeapon();
-            Attack(true);
-        }
+        AimWeapon();
     }
 
     private void FindClosestEnemy()
@@ -39,7 +26,7 @@ public class TargetLocator : MonoBehaviour
         {
             float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
 
-            if(targetDistance < maxDistance)
+            if (targetDistance < maxDistance)
             {
                 closestTarget = enemy.transform;
                 maxDistance = targetDistance;
@@ -51,7 +38,18 @@ public class TargetLocator : MonoBehaviour
 
     private void AimWeapon()
     {
+        float targetDistance = Vector3.Distance(transform.position, _target.position);
+
         _weapon.LookAt(_target);
+
+        if (targetDistance < _range)
+        {
+            Attack(true);
+        }
+        else
+        {
+            Attack(false);
+        }
     }
 
     private void Attack(bool isActive)
