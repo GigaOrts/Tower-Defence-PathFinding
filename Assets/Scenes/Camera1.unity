@@ -4575,12 +4575,12 @@ Transform:
   - {fileID: 738317471}
   - {fileID: 145881680}
   - {fileID: 2049574120}
-  - {fileID: 1452687306}
-  - {fileID: 1849136406}
-  - {fileID: 534646028}
-  - {fileID: 1094947930}
-  - {fileID: 968499262}
   - {fileID: 524105606}
+  - {fileID: 1452687306}
+  - {fileID: 534646028}
+  - {fileID: 968499262}
+  - {fileID: 1849136406}
+  - {fileID: 1094947930}
   - {fileID: 784153477}
   - {fileID: 163532494}
   - {fileID: 1538935451}
@@ -7169,7 +7169,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 55
+  orthographic size: 33
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7192,14 +7192,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 0, y: 76, z: 0}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 55, y: 44.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class Pathfinder : MonoBehaviour
     private Queue<Node> _frontiers = new Queue<Node>();
     private Dictionary<Vector2Int, Node> _reached = new Dictionary<Vector2Int, Node>();
 
-    private Vector2Int[] _directions = { Vector2Int.right, Vector2Int.left, Vector2Int.up, Vector2Int.down };
+    private Vector2Int[] _directions = { Vector2Int.right, Vector2Int.left, Vector2Int.down, Vector2Int.up };
     private Dictionary<Vector2Int, Node> _grid = new Dictionary<Vector2Int, Node>();
     private GridManager _gridManager;
 
