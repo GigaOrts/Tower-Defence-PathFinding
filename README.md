@@ -1,7 +1,9 @@
 # Tower-Defence-PathFinding
 
-enemy routing system
-https://drive.google.com/file/d/1jOEMwdE78M89rPdBnbmPQaHjl75TUfOm/view?usp=drive_link
+- Dynamic Path-Finding System
+- UI, Post-Processing
+- A* algorithm
+- Dijkstra’s algorithm
 
 Record with entire level:
 https://drive.google.com/file/d/198pdgE9v5Hn58roe1aoJBJaySfvG2QBq/view?usp=sharing
